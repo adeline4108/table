@@ -25,7 +25,7 @@ const items = [
     }
 ]
 
-const headers = ['name', 'price', 'description', 'itemsAvailable'];
+
 
 const table = document.createElement('table');
 table.id = 'table';
@@ -38,13 +38,20 @@ document.body.appendChild(table);
     const tableRow = document.createElement('tr');
     tableHeader.appendChild(tableRow);
     const tableHead = document.createElement('th');
-    
 
 
-    for (let i = 0; i < 4; i++) {
-        const tableHead = document.createElement('th');
-        tableRow.appendChild(tableHead);    
-    }
+    const headers = ['name', 'price', 'description', 'itemsAvailable'];
+for (let i = 0; i < headers.length; i++) {
+    const tableHead = document.createElement('th');
+    const headerNode = document.createTextNode(headers[i]);
+    tableHead.appendChild(headerNode);
+    tableRow.appendChild(tableHead);
+}
+
+
+
+
+ 
 
     // for (let i = 0; i < headers.length; i++) {
     //     const tableHeadNode = tableHead.innerText(headers[i])
@@ -55,13 +62,21 @@ document.body.appendChild(table);
 for (let i = 0; i < items.length; i++) {
     const tableRow = document.createElement('tr');
     table.appendChild(tableRow);
-    for (let i = 0; i < 4; i++) {
+    
     const tableData = document.createElement('td');
     tableData.id = 'tableData';
-    const tableDataNode = document.createTextNode(items[i].name);
-
-    tableData.appendChild(tableDataNode);
-    tableRow.appendChild(tableData);
-    }
     
+        const tableDataNodeName = document.createTextNode(items[i].name);
+        tableData.appendChild(tableDataNodeName);
+        
+    
+        const tableDataNodePrice = document.createTextNode(items[i].price);
+         tableData.appendChild(tableDataNodePrice);
+
+         const tableDataNodeDescription = document.createTextNode(items[i].description);
+         tableData.appendChild(tableDataNodeDescription);
+
+         const tableDataNodeitemsAvailable = document.createTextNode(items[i].itemsAvailable);
+         tableData.appendChild(tableDataNodeitemsAvailable);
+     tableRow.appendChild(tableData);  
 }
