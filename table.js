@@ -63,20 +63,25 @@ for (let i = 0; i < items.length; i++) {
     const tableRow = document.createElement('tr');
     table.appendChild(tableRow);
     
-    const tableData = document.createElement('td');
-    tableData.id = 'tableData';
-    
+        const td1 = document.createElement('td');
         const tableDataNodeName = document.createTextNode(items[i].name);
-        tableData.appendChild(tableDataNodeName);
+        td1.appendChild(tableDataNodeName);
+        tableRow.appendChild(td1);
         
-    
-        const tableDataNodePrice = document.createTextNode(items[i].price);
-         tableData.appendChild(tableDataNodePrice);
+      
+        const td2 = document.createElement('td');
+        const tableDataNodePrice = document.createTextNode(`${items[i].price}$`);
+        td2.appendChild(tableDataNodePrice);
+        tableRow.appendChild(td2);
 
-         const tableDataNodeDescription = document.createTextNode(items[i].description);
-         tableData.appendChild(tableDataNodeDescription);
+        const td3 = document.createElement('td');
+        const tableDataNodeDescription = document.createTextNode(items[i].description);
+        td3.appendChild(tableDataNodeDescription);
+        tableRow.appendChild(td3);
 
-         const tableDataNodeitemsAvailable = document.createTextNode(items[i].itemsAvailable);
-         tableData.appendChild(tableDataNodeitemsAvailable);
-     tableRow.appendChild(tableData);  
+        const td4 = document.createElement('td');
+        const tableDataNodeitemsAvailable = document.createTextNode(items[i].itemsAvailable);
+        td4.appendChild(tableDataNodeitemsAvailable);
+        tableRow.appendChild(td4);
+  
 }
