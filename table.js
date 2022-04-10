@@ -26,7 +26,7 @@ const items = [
 ]
 
 
-
+function createTable(){
 const table = document.createElement('table');
 table.id = 'table';
 document.body.appendChild(table);
@@ -48,16 +48,6 @@ for (let i = 0; i < headers.length; i++) {
     tableRow.appendChild(tableHead);
 }
 
-
-
-
- 
-
-    // for (let i = 0; i < headers.length; i++) {
-    //     const tableHeadNode = tableHead.innerText(headers[i])
-        
-    // }
-      
 
 for (let i = 0; i < items.length; i++) {
     const tableRow = document.createElement('tr');
@@ -84,4 +74,19 @@ for (let i = 0; i < items.length; i++) {
         td4.appendChild(tableDataNodeitemsAvailable);
         tableRow.appendChild(td4);
   
+}
+}
+
+createTable();
+
+function addElement(params) {
+    
+}
+
+function deleteElement(params) {
+    
+}
+
+function editElement(params) {
+    
 }
