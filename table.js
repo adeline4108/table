@@ -24,16 +24,22 @@ const items = [
         itemsAvailable: 50 
     }
 ]
+const tableRow = document.createElement('tr');
 
+function createCell(element) {
+    const td1 = document.createElement('td');
+    const tableDataNodeName = document.createTextNode(element);
+    td1.appendChild(tableDataNodeName);
+    tableRow.appendChild(td1);
+}
 
-function createTable(){
 const table = document.createElement('table');
-table.id = 'table';
-document.body.appendChild(table);
+
+function createTableHeader() {
+    document.body.appendChild(table);
 
 
     const tableHeader = document.createElement('thead');
-    tableHeader.id = 'tableHead';
     table.appendChild(tableHeader);
     const tableRow = document.createElement('tr');
     tableHeader.appendChild(tableRow);
@@ -41,22 +47,24 @@ document.body.appendChild(table);
 
 
     const headers = ['name', 'price', 'description', 'itemsAvailable'];
-for (let i = 0; i < headers.length; i++) {
+    for (let i = 0; i < headers.length; i++) {
     const tableHead = document.createElement('th');
     const headerNode = document.createTextNode(headers[i]);
     tableHead.appendChild(headerNode);
     tableRow.appendChild(tableHead);
 }
+}
+
+function createTable(){
+    
+    createTableHeader();
 
 
 for (let i = 0; i < items.length; i++) {
     const tableRow = document.createElement('tr');
     table.appendChild(tableRow);
     
-        const td1 = document.createElement('td');
-        const tableDataNodeName = document.createTextNode(items[i].name);
-        td1.appendChild(tableDataNodeName);
-        tableRow.appendChild(td1);
+        createCell(items[i].name);
         
       
         const td2 = document.createElement('td');
