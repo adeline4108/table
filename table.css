@@ -1,8 +1,7 @@
-#table, #tableHead, td {
-    border: 2px, solid, black;
+table, th, td {
+    border: 2px solid black;
     border-collapse: collapse;
 }
 
 td {
-    padding: 5px;
-}
+    padding: 5px;}
