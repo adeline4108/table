@@ -59,7 +59,6 @@ function createTable(){
     
     createTableHeader();
 
-
 for (let i = 0; i < items.length; i++) {
     const tableRow = document.createElement('tr');
     table.appendChild(tableRow);
@@ -81,7 +80,6 @@ for (let i = 0; i < items.length; i++) {
         const tableDataNodeitemsAvailable = document.createTextNode(items[i].itemsAvailable);
         td4.appendChild(tableDataNodeitemsAvailable);
         tableRow.appendChild(td4);
-  
 }
 }
 
