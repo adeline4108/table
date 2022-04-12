@@ -36,7 +36,6 @@ function createTableHeader() {
 
     const tableRow = document.createElement('tr');
     tableHeader.appendChild(tableRow);
-    const tableHead = document.createElement('th');
 
 
     const headers = Object.keys(items[0]);
