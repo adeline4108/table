@@ -50,7 +50,7 @@ function createTableHeader() {
     return headers;
 }
 
-function createTable() {
+export function createTable() {
     const headers =  createTableHeader();
 
     for (let i = 0; i < items.length; i++) {
@@ -68,7 +68,7 @@ function createTable() {
     }
 }
 
-createTable();
+
 
 function addElement(params) {
     
