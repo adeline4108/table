@@ -1,37 +1,29 @@
 const items = [
     {
         name: 'shovel',
-        price: 15,
+        price: '15$',
         description: 'to dig',
-        itemsAvailable: 10
+        itemsAvailable: 10,
     },
     {
         name: 'hammer',
-        price: 10,
+        price: '15$',
         description: 'to nail',
-        itemsAvailable: 5 
+        itemsAvailable: 5 ,
     },
     {
         name: 'pickaxe',
-        price: 20,
+        price: '15$',
         description: 'to break stones',
-        itemsAvailable: 4
+        itemsAvailable: 4,
     },
     {
         name: 'sword',
-        price: 100,
+        price: '15$',
         description: 'to attack and defend',
-        itemsAvailable: 50 
+        itemsAvailable: 50 ,
     }
 ]
-const tableRow = document.createElement('tr');
-
-function createCell(element) {
-    const td1 = document.createElement('td');
-    const tableDataNodeName = document.createTextNode(element);
-    td1.appendChild(tableDataNodeName);
-    tableRow.appendChild(td1);
-}
 
 const table = document.createElement('table');
 
@@ -41,46 +33,40 @@ function createTableHeader() {
 
     const tableHeader = document.createElement('thead');
     table.appendChild(tableHeader);
+
     const tableRow = document.createElement('tr');
     tableHeader.appendChild(tableRow);
     const tableHead = document.createElement('th');
 
 
-    const headers = ['name', 'price', 'description', 'itemsAvailable'];
+    const headers = Object.keys(items[0]);
+
     for (let i = 0; i < headers.length; i++) {
-    const tableHead = document.createElement('th');
-    const headerNode = document.createTextNode(headers[i]);
-    tableHead.appendChild(headerNode);
-    tableRow.appendChild(tableHead);
+        const tableHead = document.createElement('th');
+        const headerNode = document.createTextNode(headers[i]);
+        tableHead.appendChild(headerNode);
+        tableRow.appendChild(tableHead);
+    }
+
+    return headers;
 }
-}
 
-function createTable(){
-    
-    createTableHeader();
+function createTable() {
+    const headers =  createTableHeader();
 
-for (let i = 0; i < items.length; i++) {
-    const tableRow = document.createElement('tr');
-    table.appendChild(tableRow);
-    
-        createCell(items[i].name);
-        
-      
-        const td2 = document.createElement('td');
-        const tableDataNodePrice = document.createTextNode(`${items[i].price}$`);
-        td2.appendChild(tableDataNodePrice);
-        tableRow.appendChild(td2);
+    for (let i = 0; i < items.length; i++) {
+        const tableRow = document.createElement('tr');
+        table.appendChild(tableRow);
 
-        const td3 = document.createElement('td');
-        const tableDataNodeDescription = document.createTextNode(items[i].description);
-        td3.appendChild(tableDataNodeDescription);
-        tableRow.appendChild(td3);
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            const name = document.createTextNode(items[i][header]);
 
-        const td4 = document.createElement('td');
-        const tableDataNodeitemsAvailable = document.createTextNode(items[i].itemsAvailable);
-        td4.appendChild(tableDataNodeitemsAvailable);
-        tableRow.appendChild(td4);
-}
+            td.appendChild(name);
+
+            tableRow.appendChild(td);
+        })
+    }
 }
 
 createTable();
