@@ -1,4 +1,4 @@
-const items = [
+export const items = [
     {
         name: 'shovel',
         price: '15$',
@@ -25,7 +25,7 @@ const items = [
     }
 ]
 
-const table = document.createElement('table');
+export const table = document.createElement('table');
 
 function createTableHeader() {
     document.body.appendChild(table);
