@@ -1,6 +1,9 @@
 button {
-    background-color: white;
-    padding: 5px 15px;
+  /* display: flex; */
+ 
+  align-content: flex-end;
+  background-color: white;
+  padding: 5px 15px;
 }
 
 .modal {

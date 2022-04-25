@@ -1,15 +1,7 @@
-const btn = document.createElement('button');
-export function createModalBoxButton() {
-    document.body.appendChild(btn);
-    const pencil = document.createElement('span');
-    pencil.className = 'pencil';
-    pencil.innerHTML ='&#9998;';
-    btn.appendChild(pencil);
+//const btn = document.createElement('button');
+export function createModal(btn) {
+    
 
-}
-
-
-export function createModal() {
     const divModal = document.createElement('div');
     document.body.appendChild(divModal);
     divModal.className = 'modal';
@@ -22,12 +14,13 @@ export function createModal() {
     close.className = 'close';
     close.innerHTML = '&times';
     divModalContent.appendChild(close);
-
+ 
+    
     btn.onclick = () => divModal.style.display = "block";
     close.onclick = () => divModal.style.display = "none";
     window.onclick = function(event) {
         if (event.target == divModal) {
-        divModal.style.display = "none";
+            divModal.style.display = "none";
         }
     }
    
@@ -35,23 +28,25 @@ export function createModal() {
     const inputContainer = document.createElement('div');
     inputContainer.id = 'input-container';
     divModalContent.appendChild(inputContainer);
-    const name = document.createElement('input');
-    name.className = 'input';
-    name.placeholder = 'name';
+
+    const name = createElement('input', 'name');
     inputContainer.appendChild(name);
 
-    const price = document.createElement('input');
-    price.className = 'input';
-    price.placeholder = 'price';
+    const price = createElement('input', 'price');
     inputContainer.appendChild(price);
 
-    const description = document.createElement('input');
-    description.className = 'input';
-    description.placeholder = 'description';
+    const description = createElement('input', 'description');
     inputContainer.appendChild(description);
+
     
-    const itemsAvailable = document.createElement('input');
-    itemsAvailable.className = 'input';
-    itemsAvailable.placeholder = 'items available';
+    const itemsAvailable = createElement('input', 'items available')
     inputContainer.appendChild(itemsAvailable);
+}
+
+function createElement(className, placeholder) {
+    const input = document.createElement('input');
+    input.className = className;
+    input.placeholder = placeholder;
+
+    return input;
 }

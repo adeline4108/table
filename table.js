@@ -81,6 +81,7 @@ export function createTable() {
             pencil.className = 'pencil';
             pencil.innerHTML ='&#9998;';
             btn.appendChild(pencil);
+            // btn.addEventListener('click', createModal)
             createModal(btn);
             tableRow.appendChild(btn);
     
