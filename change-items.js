@@ -10,6 +10,6 @@ function changeDescription() {
     
 }
 
-function changeItemsAvailable(params) {
+function changeItemsAvailable() {
     
 }

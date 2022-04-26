@@ -1,7 +1,6 @@
 //const btn = document.createElement('button');
 export function createModal(btn) {
     
-
     const divModal = document.createElement('div');
     document.body.appendChild(divModal);
     divModal.className = 'modal';
@@ -14,7 +13,6 @@ export function createModal(btn) {
     close.className = 'close';
     close.innerHTML = '&times';
     divModalContent.appendChild(close);
- 
     
     btn.onclick = () => divModal.style.display = 'block';
     close.onclick = () => divModal.style.display = 'none';
@@ -24,7 +22,6 @@ export function createModal(btn) {
         }
     }
    
-    
     const inputContainer = document.createElement('div');
     inputContainer.id = 'input-container';
     divModalContent.appendChild(inputContainer);
@@ -38,7 +35,6 @@ export function createModal(btn) {
     const description = createElement('input', 'description');
     inputContainer.appendChild(description);
 
-    
     const itemsAvailable = createElement('input', 'items available')
     inputContainer.appendChild(itemsAvailable);
 }
