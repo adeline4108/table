@@ -1,4 +1,5 @@
 import { createModal } from "./modal-box.js";
+
 export const items = [
     {
         name: 'shovel',
@@ -27,13 +28,11 @@ export const items = [
 ]
 
 export const headers = Object.keys(items[0]);
-     
 
 export const table = document.createElement('table');
 
 function createTableHeader() {
     document.body.appendChild(table);
-
 
     const tableHeader = document.createElement('thead');
     table.appendChild(tableHeader);
@@ -41,7 +40,6 @@ function createTableHeader() {
     const tableRow = document.createElement('tr');
     tableHeader.appendChild(tableRow);
    
-
     for (let i = 0; i < headers.length; i++) {
         const tableHead = document.createElement('th');
         const headerNode = document.createTextNode(headers[i]);
@@ -54,7 +52,6 @@ function createTableHeader() {
     edit.appendChild(editNode);
     tableRow.appendChild(edit);
 
-    
     return headers;
 }
 
@@ -72,9 +69,8 @@ export function createTable() {
             td.appendChild(name);
             
             tableRow.appendChild(td);
-       
         }) 
-    
+
             const btn = document.createElement('button');
             document.body.appendChild(btn);
             const pencil = document.createElement('span');
@@ -84,7 +80,6 @@ export function createTable() {
             // btn.addEventListener('click', createModal)
             createModal(btn);
             tableRow.appendChild(btn);
-    
-        
+
         }
 }

@@ -7,7 +7,7 @@ export function createModal(btn) {
     divModal.className = 'modal';
     
     const divModalContent = document.createElement('div');
-    divModalContent.className = 'divmodalContent';
+    divModalContent.className = 'modal-content';
     divModal.appendChild(divModalContent);
 
     const close = document.createElement('span');
@@ -16,11 +16,11 @@ export function createModal(btn) {
     divModalContent.appendChild(close);
  
     
-    btn.onclick = () => divModal.style.display = "block";
-    close.onclick = () => divModal.style.display = "none";
+    btn.onclick = () => divModal.style.display = 'block';
+    close.onclick = () => divModal.style.display = 'none';
     window.onclick = function(event) {
         if (event.target == divModal) {
-            divModal.style.display = "none";
+            divModal.style.display = 'none';
         }
     }
    
