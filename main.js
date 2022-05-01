@@ -1,2 +1,3 @@
-import {createTable} from './table.js'
+import { createTable } from './table.js';
+
 createTable();
