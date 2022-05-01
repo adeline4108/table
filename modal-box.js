@@ -1,6 +1,5 @@
 //const btn = document.createElement('button');
 export function createModal(btn) {
-    
     const divModal = document.createElement('div');
     document.body.appendChild(divModal);
     divModal.className = 'modal';

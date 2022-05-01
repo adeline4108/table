@@ -71,15 +71,14 @@ export function createTable() {
             tableRow.appendChild(td);
         }) 
 
-            const btn = document.createElement('button');
-            document.body.appendChild(btn);
-            const pencil = document.createElement('span');
-            pencil.className = 'pencil';
-            pencil.innerHTML ='&#9998;';
-            btn.appendChild(pencil);
-            // btn.addEventListener('click', createModal)
-            createModal(btn);
-            tableRow.appendChild(btn);
+        const btn = document.createElement('button');
+        document.body.appendChild(btn);
+        const pencil = document.createElement('span');
+        pencil.className = 'pencil';
+        pencil.innerHTML ='&#9998;';
+        btn.appendChild(pencil);
+        createModal(btn);
+        tableRow.appendChild(btn);
 
         }
 }
