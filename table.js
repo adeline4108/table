@@ -57,8 +57,7 @@ function createTableHeader() {
 
 export function createTable() {
     const headers = createTableHeader();
-    
-    for (let i = 0; i < items.length; i++) {
+for (let i = 0; i < items.length; i++) {
         const tableRow = document.createElement('tr');
         table.appendChild(tableRow);
         
@@ -67,7 +66,6 @@ export function createTable() {
             const name = document.createTextNode(items[i][header]);
             
             td.appendChild(name);
-            
             tableRow.appendChild(td);
         }) 
 
