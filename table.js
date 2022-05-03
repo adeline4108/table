@@ -72,8 +72,7 @@ for (let i = 0; i < items.length; i++) {
         const btn = document.createElement('button');
         document.body.appendChild(btn);
         const pencil = document.createElement('span');
-        pencil.className = 'pencil';
-        pencil.innerHTML ='&#9998;';
+        pencil.className = 'pencil fa-solid fa-pencil';
         btn.appendChild(pencil);
         createModal(btn);
         tableRow.appendChild(btn);

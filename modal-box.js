@@ -1,5 +1,5 @@
 //const btn = document.createElement('button');
-export function createModal(btn) {
+export function createModal(btn) { 
     const divModal = document.createElement('div');
     document.body.appendChild(divModal);
     divModal.className = 'modal';
@@ -9,8 +9,8 @@ export function createModal(btn) {
     divModal.appendChild(divModalContent);
 
     const close = document.createElement('span');
-    close.className = 'close';
-    close.innerHTML = '&times';
+    close.className = 'close fa-solid fa-xmark';
+    //close.innerHTML = '&times';
     divModalContent.appendChild(close);
     
     btn.onclick = () => divModal.style.display = 'block';
